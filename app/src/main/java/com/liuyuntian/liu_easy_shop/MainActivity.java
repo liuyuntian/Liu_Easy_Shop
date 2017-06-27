@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ import com.liuyuntian.liu_easy_shop.android.utils.ActivityUtils;
 import com.liuyuntian.liu_easy_shop.fragment.Shop_Fragment;
 import com.liuyuntian.liu_easy_shop.fragment_adapter.MyFragmentAdapter;
 import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.BottomBarTab;
 import com.roughike.bottombar.OnTabSelectListener;
 
 import java.util.ArrayList;
@@ -33,9 +35,8 @@ public class MainActivity extends AppCompatActivity {
     TextView tv_title;
     @BindView(R.id.viewpager)
     ViewPager viewPager;
-    @BindView(R.id.linearlayout)
-    BottomBar linearlayout;
-    MenuItem prevMenuItem;
+    @BindView(R.id.bottomBar)
+    BottomBar bottomBar;
     private ActivityUtils activityUtils;
 
     private boolean isExit = false;
@@ -45,18 +46,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
         activityUtils = new ActivityUtils(this);
-
-
         init();
     }
 
     private void init() {
-        linearlayout.getTabAtPosition(0).setSelected(true);
+        bottomBar.selectTabAtPosition(0,true);
         viewPager.setOffscreenPageLimit(4);
         fragmentArrayList = new ArrayList<>();
-
         fragmentArrayList.add(new Shop_Fragment());
         fragmentArrayList.add(new Shop_Fragment());
         fragmentArrayList.add(new Shop_Fragment());
@@ -65,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         MyFragmentAdapter myFragmentAdapter = new MyFragmentAdapter(getSupportFragmentManager(),fragmentArrayList);
         viewPager.setAdapter(myFragmentAdapter);
 
-        linearlayout.setOnTabSelectListener(new OnTabSelectListener() {
+        bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
                 switch (tabId) {
@@ -89,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -98,7 +94,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                linearlayout.getTabAtPosition(position).setSelected(true);
+                Log.d("MainActivity", "position:" + position);
+                bottomBar.selectTabAtPosition(position,true);
             }
 
             @Override

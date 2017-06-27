@@ -29,12 +29,12 @@
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/linearlayout"
+        android:layout_above="@+id/bottomBar"
         android:layout_below="@+id/main_toobar" />
 
 
     <com.roughike.bottombar.BottomBar
-        android:id="@+id/linearlayout"
+        android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"

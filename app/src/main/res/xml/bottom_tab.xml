@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        barColorWhenSelected="@color/first_color"
+        id="@+id/tab_shopping"
+        icon="@drawable/ic_shopping_one"
+        title="市场" />
+    <tab
+        barColorWhenSelected="@color/second_color"
+        id="@+id/tab_message"
+        icon="@drawable/ic_chat_one"
+        title="消息" />
+    <tab
+        barColorWhenSelected="@color/third_color"
+        id="@+id/tab_list"
+        icon="@drawable/ic_perm_identity_one"
+        title="通讯录" />
+    <tab
+        barColorWhenSelected="@color/forth_color"
+        id="@+id/tab_me"
+        icon="@drawable/ic_people_one"
+        title="我的" />
+</tabs>

@@ -134,6 +134,7 @@ public class LoginActivity extends MvpActivity<LoginView, LoginPresenter> implem
     @Override
     public void registerSuccess() {
         activityUtils.startActivity(MainActivity.class);
+        finish();
     }
 
     @Override

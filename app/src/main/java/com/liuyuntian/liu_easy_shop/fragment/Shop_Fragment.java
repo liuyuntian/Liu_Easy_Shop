@@ -24,32 +24,13 @@ import butterknife.Unbinder;
 
 public class Shop_Fragment extends Fragment {
     View view;
-    @BindView(R.id.tv_login)
-    TextView tvLogin;
-    @BindView(R.id.tv_person_info)
-    TextView tvPersonInfo;
-    @BindView(R.id.tv_person_goods)
-    TextView tvPersonGoods;
-    @BindView(R.id.tv_goods_upload)
-    TextView tvGoodsUpload;
-    Unbinder unbinder;
-    ActivityUtils activityUtils = new ActivityUtils(this);
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.from(getActivity()).inflate(R.layout.fragment_me, container, false);
-        unbinder = ButterKnife.bind(this, view);
+        view = inflater.from(getActivity()).inflate(R.layout.fragment_shop, container, false);
+        ButterKnife.bind(this,view);
         return view;
     }
-    @OnClick(R.id.tv_login)
-    public void onClick(View view){
-        activityUtils.startActivity(LoginActivity.class);
-    }
 
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
-    }
 }

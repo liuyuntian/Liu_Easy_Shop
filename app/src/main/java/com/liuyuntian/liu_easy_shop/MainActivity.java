@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.liuyuntian.liu_easy_shop.android.utils.ActivityUtils;
+import com.liuyuntian.liu_easy_shop.fragment.MeFragment;
 import com.liuyuntian.liu_easy_shop.fragment.Shop_Fragment;
 import com.liuyuntian.liu_easy_shop.fragment_adapter.MyFragmentAdapter;
 import com.roughike.bottombar.BottomBar;
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentArrayList.add(new Shop_Fragment());
         fragmentArrayList.add(new Shop_Fragment());
         fragmentArrayList.add(new Shop_Fragment());
-        fragmentArrayList.add(new Shop_Fragment());
+        fragmentArrayList.add(new MeFragment());
 
         MyFragmentAdapter myFragmentAdapter = new MyFragmentAdapter(getSupportFragmentManager(),fragmentArrayList);
         viewPager.setAdapter(myFragmentAdapter);

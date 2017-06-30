@@ -10,6 +10,9 @@ import com.liuyuntian.liu_easy_shop.mode.UserResult;
  */
 
 public class CachePerference {
+
+
+
     private static CachePerference cachePerference;
     SharedPreferences sp;
     private CachePerference(){
@@ -22,20 +25,24 @@ public class CachePerference {
         return cachePerference;
     }
     SharedPreferences.Editor editor;
-    private final String USER_NAME = "name";
-    private final String USER_PASSWORD = "password";
-    private final String HX_ID = "hx_id";
-    private final String TABLE_ID = "table_id";
+    private static final String KEY_USER_NAME = "userName";
+    private static final String KEY_USER_HEAD_IMAGE = "headImg";
+    private static final String KEY_USER_NICKNAME = "nickname";
+    private static final String KEY_USER_HX_ID ="hx_id" ;
+    private final String KEY_USER_PWD = "password";
+    private static final String KEY_USER_TABLE_ID = "uuid";
 
     public void init(Context context){
         sp = context.getSharedPreferences("userInfo",Context.MODE_PRIVATE);
         editor = sp.edit();
     }
     public void save(UserResult.DataBean user){
-        editor.putString(USER_NAME,user.getUsername());
-        editor.putString(USER_PASSWORD,user.getPassword());
-        editor.putString(HX_ID,user.getUuid());
-        editor.putString(TABLE_ID,user.getName());
+        editor.putString(KEY_USER_NAME, user.getUsername());
+        editor.putString(KEY_USER_PWD, user.getPassword());
+        editor.putString(KEY_USER_HX_ID, user.getName());
+        editor.putString(KEY_USER_TABLE_ID, user.getUuid());
+        editor.putString(KEY_USER_HEAD_IMAGE, user.getOther());
+        editor.putString(KEY_USER_NICKNAME, user.getNickname());
         editor.apply();
     }
     public void clear(){
@@ -44,10 +51,12 @@ public class CachePerference {
     }
     public UserResult.DataBean getUser(){
         UserResult.DataBean user = new UserResult.DataBean();
-        user.setUsername(sp.getString(USER_NAME,null));
-        user.setPassword(sp.getString(USER_PASSWORD,null));
-        user.setUuid(sp.getString(HX_ID,null));
-        user.setName(sp.getString(TABLE_ID,null));
+        user.setUsername(sp.getString(KEY_USER_NAME,null));
+        user.setPassword(sp.getString(KEY_USER_PWD,null));
+        user.setUuid(sp.getString(KEY_USER_HX_ID,null));
+        user.setName(sp.getString(KEY_USER_HX_ID,null));
+        user.setOther(sp.getString(KEY_USER_HEAD_IMAGE,null));
+        user.setNickname(sp.getString(KEY_USER_NICKNAME,null));
         return user;
     }
 

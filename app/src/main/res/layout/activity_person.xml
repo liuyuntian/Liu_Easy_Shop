@@ -5,7 +5,7 @@
     android:id="@+id/activity_person"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark">
+    android:background="#ffffff">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -26,8 +26,8 @@
 
         <com.pkmmte.view.CircularImageView
             android:id="@+id/iv_user_head"
-            android:layout_width="@dimen/dp_140"
-            android:layout_height="@dimen/dp_140"
+            android:layout_width="@dimen/dp_120"
+            android:layout_height="@dimen/dp_120"
             android:scaleType="centerInside"
             android:src="@drawable/user_ico"
             app:border="true"
@@ -40,22 +40,23 @@
             app:shadow="false" />
     </LinearLayout>
 
-    <!--<ListView-->
-        <!--android:id="@+id/listView"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:layout_above="@+id/btn_login_out"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_below="@+id/linearLayout"-->
-        <!--android:background="@color/bg_page" />-->
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_login_out"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout"
+        android:background="@color/bg_page" />
 
     <Button
         android:id="@+id/btn_login_out"
         style="@style/AppTheme.Button.EasyShop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/login_out"
         android:layout_alignParentBottom="true"
-        android:text="@string/login_out" />
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

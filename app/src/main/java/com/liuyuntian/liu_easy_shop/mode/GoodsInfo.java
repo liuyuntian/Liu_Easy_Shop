@@ -1,5 +1,7 @@
 package com.liuyuntian.liu_easy_shop.mode;
 
+import java.io.Serializable;
+
 /**
  * 作者：王小超
  * 邮箱：wxcican@qq.com
@@ -15,7 +17,7 @@ package com.liuyuntian.liu_easy_shop.mode;
 //        "uuid": "5606FF8EF60146A48F1FCDC34144907D",  //商品表中主键
 //        "master": "android"  //发布者
 
-public class GoodsInfo {
+public class GoodsInfo implements Serializable{
 
     private String id;
     /*商品价格*/

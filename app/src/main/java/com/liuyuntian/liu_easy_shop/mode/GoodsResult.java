@@ -2,6 +2,7 @@ package com.liuyuntian.liu_easy_shop.mode;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ import java.util.List;
 //        "datas": [
 //        {
 
-public class GoodsResult {
+public class GoodsResult implements Serializable{
 
     private int code;
     @SerializedName("msg")

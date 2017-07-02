@@ -2,6 +2,7 @@ package com.liuyuntian.liu_easy_shop.network;
 
 import com.google.gson.Gson;
 import com.liuyuntian.liu_easy_shop.cache.peference.CachePerference;
+import com.liuyuntian.liu_easy_shop.mode.UserResult;
 
 import java.io.File;
 
@@ -95,9 +96,23 @@ public class EasyShopClient {
                 .build();
 
         Request request = new Request.Builder()
+                .url(EasyShopApi.BASE_URL+EasyShopApi.GETGOODS)
                 .post(requestBody)
                 .build();
 
         return okHttpClient.newCall(request);
+    }
+    // nick name update
+    public Call uploadUser(UserResult.DataBean user){
+        RequestBody requestBody = new MultipartBody.Builder()
+                .setType(MultipartBody.FORM)
+                .addFormDataPart("user",gson.toJson(user))
+                .build();
+        Request request = new Request.Builder()
+                .url(EasyShopApi.BASE_URL+EasyShopApi.UPDATA)
+                .post(requestBody)
+                .build();
+        return okHttpClient.newCall(request);
+
     }
 }

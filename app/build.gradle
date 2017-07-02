@@ -39,4 +39,7 @@ dependencies {
     compile 'org.hybridsquad.android.photocropper:library:2.1.0'
     //ImageLoader（用于图片加载）
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    //刷新 加载
+    compile 'in.srain.cube:ptr-load-more:1.0.2'
+    compile 'jp.wasabeef:recyclerview-animators:2.2.3'
 }

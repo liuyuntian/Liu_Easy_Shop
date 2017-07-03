@@ -2,6 +2,7 @@ package com.liuyuntian.liu_easy_shop.cache.peference;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.liuyuntian.liu_easy_shop.mode.UserResult;
 
@@ -57,6 +58,7 @@ public class CachePerference {
         user.setName(sp.getString(KEY_USER_HX_ID,null));
         user.setOther(sp.getString(KEY_USER_HEAD_IMAGE,null));
         user.setNickname(sp.getString(KEY_USER_NICKNAME,null));
+        Log.d("CachePerference", user.getUsername());
         return user;
     }
 

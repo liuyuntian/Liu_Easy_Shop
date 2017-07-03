@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.hannesdorfmann.mosby.mvp.MvpActivity;
 import com.liuyuntian.liu_easy_shop.adapter.PersonAdapter;
@@ -96,7 +97,7 @@ public class PersonActivity extends MvpActivity<PersonView, PersonPresenter> imp
 
     private void init() {
         UserResult.DataBean user = CachePerference.getInstance().getUser();
-        list.add(new ItemShow("用户名",user.getName()));
+        list.add(new ItemShow("用户名",user.getUsername()));
         list.add(new ItemShow("昵称",user.getNickname()));
         list.add(new ItemShow("环信Id",user.getName()));
     }

@@ -42,7 +42,7 @@ public class UserResult implements Serializable {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable{
         /**
          * username : 123456
          * other : /images/D2DE0EF4740740A698E93655D762ED6F/97E6B10FF4.jpg
